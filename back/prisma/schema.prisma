@@ -1,0 +1,83 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id          String      @id @default(cuid())
+
+  email       String      @unique
+  password    String
+
+  workspaces  Workspace[]
+
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+}
+
+model Workspace {
+  id          String      @id @default(cuid())
+
+  name        String
+  color       String?
+  icon        String?
+
+  order       Int         @default(0)
+
+  userId      String
+  user        User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  tasks       Task[]
+  topics      Topic[]
+
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+
+  @@index([userId])
+}
+
+model Task {
+  id           String      @id @default(cuid())
+
+  title        String
+  description  String?
+
+  completed    Boolean     @default(false)
+
+  dueDate      DateTime?
+
+  tags         Json?
+
+  order        Int         @default(0)
+
+  workspaceId  String
+  workspace    Workspace   @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+
+  createdAt    DateTime    @default(now())
+  updatedAt    DateTime    @updatedAt
+
+  @@index([workspaceId])
+  @@index([completed])
+  @@index([dueDate])
+}
+
+model Topic {
+  id           String      @id @default(cuid())
+
+  title        String
+
+  content      Json        @default("{}")
+
+  order        Int         @default(0)
+
+  workspaceId  String
+  workspace    Workspace   @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+
+  createdAt    DateTime    @default(now())
+  updatedAt    DateTime    @updatedAt
+
+  @@index([workspaceId])
+}
