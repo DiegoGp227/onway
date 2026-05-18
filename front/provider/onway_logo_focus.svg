@@ -1,0 +1,67 @@
+<svg width="100%" viewBox="0 0 690 350" role="img" xmlns="http://www.w3.org/2000/svg" style="">
+  <title style="fill:rgb(0, 0, 0);stroke:none;color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">Onway logo — focus</title>
+  <desc style="fill:rgb(0, 0, 0);stroke:none;color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">Logo Onway con símbolo O tipo visor de enfoque y wordmark grande</desc>
+
+  <rect width="680" height="340" fill="#07111a" rx="16" style="fill:rgb(7, 17, 26);stroke:none;color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <defs>
+    <linearGradient id="ringFade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="rgba(228,244,240,0.5)"/>
+      <stop offset="100%" stop-color="rgba(228,244,240,0.08)"/>
+    </linearGradient>
+    <linearGradient id="greenArc" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#34d399"/>
+      <stop offset="100%" stop-color="#34d399" stop-opacity="0.25"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ── SYMBOL: focus reticle ── centered at 215,170 -->
+  <g transform="translate(215,170)" style="fill:rgb(0, 0, 0);stroke:none;color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
+
+    <!-- Outer ring faint -->
+    <circle cx="0" cy="0" r="80" fill="none" stroke="rgba(228,244,240,0.05)" stroke-width="1" style="fill:none;stroke:rgba(228, 244, 240, 0.05);color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+    <!-- Main ring -->
+    <circle cx="0" cy="0" r="64" fill="none" stroke="url(#ringFade)" stroke-width="1.5" style="fill:none;color:rgb(251, 251, 254);stroke-width:1.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+    <!-- Green accent arc — top-right ~90deg -->
+    <path d="M 0,-64 A 64,64 0 0 1 64,0" fill="none" stroke="#34d399" stroke-width="3" stroke-linecap="round" style="fill:none;stroke:rgb(52, 211, 153);color:rgb(251, 251, 254);stroke-width:3px;stroke-linecap:round;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+    <!-- Secondary thin arc — bottom-left, mirror -->
+    <path d="M 0,64 A 64,64 0 0 1 -64,0" fill="none" stroke="#34d399" stroke-width="1" stroke-linecap="round" opacity="0.35" style="fill:none;stroke:rgb(52, 211, 153);color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:round;stroke-linejoin:miter;opacity:0.35;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+    <!-- Crosshair lines — gapped in center -->
+    <!-- top -->
+    <line x1="0" y1="-74" x2="0" y2="-20" stroke="rgba(228,244,240,0.25)" stroke-width="1" stroke-linecap="round" style="fill:rgb(0, 0, 0);stroke:rgba(228, 244, 240, 0.25);color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:round;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <!-- bottom -->
+    <line x1="0" y1="20" x2="0" y2="74" stroke="rgba(228,244,240,0.25)" stroke-width="1" stroke-linecap="round" style="fill:rgb(0, 0, 0);stroke:rgba(228, 244, 240, 0.25);color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:round;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <!-- left -->
+    <line x1="-74" y1="0" x2="-20" y2="0" stroke="rgba(228,244,240,0.25)" stroke-width="1" stroke-linecap="round" style="fill:rgb(0, 0, 0);stroke:rgba(228, 244, 240, 0.25);color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:round;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <!-- right -->
+    <line x1="20" y1="0" x2="74" y2="0" stroke="rgba(228,244,240,0.25)" stroke-width="1" stroke-linecap="round" style="fill:rgb(0, 0, 0);stroke:rgba(228, 244, 240, 0.25);color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:round;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+    <!-- Corner brackets — top-right -->
+    <path d="M 24,-44 L 44,-44 L 44,-24" fill="none" stroke="#34d399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="fill:none;stroke:rgb(52, 211, 153);color:rgb(251, 251, 254);stroke-width:2px;stroke-linecap:round;stroke-linejoin:round;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <!-- bottom-left -->
+    <path d="M -24,44 L -44,44 L -44,24" fill="none" stroke="#34d399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="fill:none;stroke:rgb(52, 211, 153);color:rgb(251, 251, 254);stroke-width:2px;stroke-linecap:round;stroke-linejoin:round;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <!-- top-left faint -->
+    <path d="M -24,-44 L -44,-44 L -44,-24" fill="none" stroke="rgba(228,244,240,0.2)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="fill:none;stroke:rgba(228, 244, 240, 0.2);color:rgb(251, 251, 254);stroke-width:1.5px;stroke-linecap:round;stroke-linejoin:round;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <!-- bottom-right faint -->
+    <path d="M 24,44 L 44,44 L 44,24" fill="none" stroke="rgba(228,244,240,0.2)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="fill:none;stroke:rgba(228, 244, 240, 0.2);color:rgb(251, 251, 254);stroke-width:1.5px;stroke-linecap:round;stroke-linejoin:round;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+    <!-- Center dot -->
+    <circle cx="0" cy="0" r="4" fill="#34d399" style="fill:rgb(52, 211, 153);stroke:none;color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <circle cx="0" cy="0" r="8" fill="none" stroke="#34d399" stroke-width="1" opacity="0.4" style="fill:none;stroke:rgb(52, 211, 153);color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.4;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  </g>
+
+  <!-- Divider -->
+  <line x1="308" y1="122" x2="308" y2="218" stroke="rgba(228,244,240,0.10)" stroke-width="0.75" style="fill:rgb(0, 0, 0);stroke:rgba(228, 244, 240, 0.1);color:rgb(251, 251, 254);stroke-width:0.75px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- ── WORDMARK big ── -->
+  <text x="496" y="176" font-family="'Helvetica Neue', Arial, sans-serif" font-size="62" font-weight="700" letter-spacing="-1" text-anchor="middle" fill="#e4f4f0" style="fill:rgb(228, 244, 240);stroke:none;color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Helvetica Neue&quot;, Arial, sans-serif;font-size:62px;font-weight:700;text-anchor:middle;dominant-baseline:auto">on<tspan fill="#34d399" style="fill:rgb(52, 211, 153);stroke:none;color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Helvetica Neue&quot;, Arial, sans-serif;font-size:62px;font-weight:700;text-anchor:middle;dominant-baseline:auto">WAY</tspan></text>
+
+  <!-- Tagline -->
+  <text x="496" y="202" font-family="'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="300" letter-spacing="4" text-anchor="middle" fill="rgba(228,244,240,0.28)" style="fill:rgba(228, 244, 240, 0.28);stroke:none;color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Helvetica Neue&quot;, Arial, sans-serif;font-size:11px;font-weight:300;text-anchor:middle;dominant-baseline:auto">CREATIVE STUDIO</text>
+
+</svg>
