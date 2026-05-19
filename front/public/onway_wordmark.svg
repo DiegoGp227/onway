@@ -1,0 +1,14 @@
+<svg width="100%" viewBox="0 0 690 210" role="img" xmlns="http://www.w3.org/2000/svg" style=""><defs><mask id="imagine-text-gaps-8a0ruv" maskUnits="userSpaceOnUse"><rect x="0" y="0" width="690" height="210" fill="white"/><rect x="190.14166259765625" y="38" width="303.6500244140625" height="106" fill="black" rx="2"/></mask></defs>
+  <title style="fill:rgb(0, 0, 0);stroke:none;color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">Onway wordmark</title>
+  <desc style="fill:rgb(0, 0, 0);stroke:none;color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">Wordmark solo de Onway</desc>
+
+  <rect width="680" height="200" fill="#07111a" rx="16" style="fill:rgb(7, 17, 26);stroke:none;color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <text x="340" y="122" font-family="'Helvetica Neue', Arial, sans-serif" font-size="90" font-weight="700" letter-spacing="-3" text-anchor="middle" style="fill:rgb(0, 0, 0);stroke:none;color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Helvetica Neue&quot;, Arial, sans-serif;font-size:90px;font-weight:700;text-anchor:middle;dominant-baseline:auto">
+    <tspan fill="#e4f4f0" style="fill:rgb(228, 244, 240);stroke:none;color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Helvetica Neue&quot;, Arial, sans-serif;font-size:90px;font-weight:700;text-anchor:middle;dominant-baseline:auto">on</tspan><tspan fill="#34d399" style="fill:rgb(52, 211, 153);stroke:none;color:rgb(251, 251, 254);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Helvetica Neue&quot;, Arial, sans-serif;font-size:90px;font-weight:700;text-anchor:middle;dominant-baseline:auto">WAY</tspan>
+  </text>
+
+  <!-- Thin underline accent below WAY only -->
+  <line x1="358" y1="140" x2="618" y2="140" stroke="#34d399" stroke-width="2" stroke-linecap="round" opacity="0.4" mask="url(#imagine-text-gaps-8a0ruv)" style="fill:rgb(0, 0, 0);stroke:rgb(52, 211, 153);color:rgb(251, 251, 254);stroke-width:2px;stroke-linecap:round;stroke-linejoin:miter;opacity:0.4;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+</svg>

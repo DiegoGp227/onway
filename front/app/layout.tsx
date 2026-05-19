@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   title: "OneWay",
   description: "OneWay App",
   icons: {
-    icon: "onway_icon.svg",
+    icon: "/onway_icon.png",
   },
 };
 
@@ -54,7 +54,7 @@ export default function RootLayout({
         <SWRProvider>
           {/* <ConditionalHeader /> */}
           {/* <ConditionalContent> */}
-          <div className="flex-1 w-full flex flex-col py-6 px-8 min-h-0 gap-7">
+          <div className="relative z-10 flex-1 w-full flex flex-col py-6 px-8 min-h-0 gap-7">
             {children}
           </div>
           {/* </ConditionalContent> */}
