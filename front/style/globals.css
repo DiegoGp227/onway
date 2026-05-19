@@ -1,49 +1,58 @@
 @import "tailwindcss";
 
 :root {
-  /* Base colors from mockup */
-  --bg: #07111a;
-  --surface: #091724;
-  --border: rgba(255, 255, 255, 0.07);
+  --bg: #13162a;
+  --surface: #1c1f35;
+  --border: #252840;
+  --border-hover: #333650;
 
-  /* Text colors from mockup */
-  --t1: #e4f4f0;
-  --t2: rgba(228, 244, 240, 0.52);
-  --t3: rgba(228, 244, 240, 0.28);
+  --accent: #00d4b0;
+  --accent-dark: #0891b2;
+  --accent-bright: #34d399;
+  --accent-bg: #0d2d26;
 
-  /* Accent colors */
-  --accent-teal: #00d4b0;
-  --accent-cyan: #0891b2;
-  --accent-purple: #5b21b6;
-  --accent-green: #34d399;
+  --green: #2dd4a0;
+  --green-dim: #0d3d2e;
+  --amber: #f5a623;
 
-  /* Aliases */
+  --text: #c0c4e2;
+  --text-muted: #7a7e9a;
+  --text-dim: #40445e;
+
+  --completed-bg: #0f1120;
+  --nav-hover: #1a1d33;
+
+  --radius: 10px;
+  --radius-sm: 6px;
+
   --background: var(--bg);
-  --foreground: var(--t1);
-  --text: var(--t1);
+  --foreground: var(--text);
 }
 
 @theme inline {
-  /* Base */
   --color-bg: var(--bg);
   --color-surface: var(--surface);
   --color-border: var(--border);
+  --color-border-hover: var(--border-hover);
 
-  /* Text */
-  --color-t1: var(--t1);
-  --color-t2: var(--t2);
-  --color-t3: var(--t3);
+  --color-accent: var(--accent);
+  --color-accent-dark: var(--accent-dark);
+  --color-accent-bright: var(--accent-bright);
+  --color-accent-bg: var(--accent-bg);
 
-  /* Accents */
-  --color-teal: var(--accent-teal);
-  --color-cyan: var(--accent-cyan);
-  --color-purple: var(--accent-purple);
-  --color-green: var(--accent-green);
-  --color-done: var(--accent-green);
+  --color-green: var(--green);
+  --color-green-dim: var(--green-dim);
+  --color-amber: var(--amber);
 
-  /* Fonts */
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-text: var(--text);
+  --color-text-muted: var(--text-muted);
+  --color-text-dim: var(--text-dim);
+
+  --color-completed-bg: var(--completed-bg);
+  --color-nav-hover: var(--nav-hover);
+
+  --color-radius: var(--radius);
+  --color-radius-sm: var(--radius-sm);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -72,10 +81,10 @@ body {
   position: absolute;
   inset: 0;
   background: 
-    radial-gradient(ellipse 100% 80% at 20% 0%, rgba(0, 212, 176, 0.06) 0%, transparent 45%),
-    radial-gradient(ellipse 100% 80% at 80% 100%, rgba(91, 33, 182, 0.08) 0%, transparent 45%),
+    radial-gradient(ellipse 100% 80% at 20% 0%, rgba(0, 212, 176, 0.08) 0%, transparent 45%),
+    radial-gradient(ellipse 100% 80% at 80% 100%, rgba(52, 211, 153, 0.06) 0%, transparent 45%),
     radial-gradient(ellipse 60% 50% at 50% 50%, rgba(8, 145, 178, 0.04) 0%, transparent 60%),
-    #07111a;
+    #13162a;
 }
 
 .app-bg__mesh {
@@ -98,11 +107,32 @@ body {
 .app-bg__orb--1 {
   width: 900px;
   height: 900px;
-  background: radial-gradient(circle, #00d4b0 0%, rgba(0, 144, 204, 0.5) 50%, transparent 70%);
+  background: radial-gradient(circle, #00d4b0 0%, rgba(0, 212, 176, 0.5) 50%, transparent 70%);
   opacity: 0.15;
   top: -400px;
   left: 10%;
   animation: drift-1 35s ease-in-out infinite;
+}
+
+.app-bg__orb--2 {
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, #34d399 0%, rgba(52, 211, 153, 0.5) 50%, transparent 70%);
+  opacity: 0.12;
+  bottom: -300px;
+  right: -100px;
+  animation: drift-2 40s ease-in-out infinite;
+}
+
+.app-bg__orb--3 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, #0891b2 0%, rgba(8, 145, 178, 0.5) 50%, transparent 70%);
+  opacity: 0.1;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: breathe 12s ease-in-out infinite;
 }
 
 .app-bg__orb--2 {
@@ -163,7 +193,7 @@ body {
 .app-bg__ring--2 {
   width: 900px;
   height: 900px;
-  border: 1px solid rgba(91, 33, 182, 0.06);
+  border: 1px solid rgba(52, 211, 153, 0.06);
   bottom: -200px;
   right: 10%;
   animation: spin-slow 80s linear infinite reverse;
@@ -211,6 +241,24 @@ body {
   top: 15%;
   right: 25%;
   animation: pulse-spot 8s ease-in-out infinite;
+}
+
+.app-bg__spot--2 {
+  width: 150px;
+  height: 150px;
+  background: rgba(52, 211, 153, 0.15);
+  bottom: 25%;
+  left: 15%;
+  animation: pulse-spot 10s ease-in-out infinite reverse;
+}
+
+.app-bg__spot--3 {
+  width: 100px;
+  height: 100px;
+  background: rgba(8, 145, 178, 0.15);
+  top: 60%;
+  right: 10%;
+  animation: pulse-spot 7s ease-in-out infinite 2s;
 }
 
 .app-bg__spot--2 {
