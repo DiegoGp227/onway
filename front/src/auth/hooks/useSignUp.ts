@@ -4,16 +4,18 @@ import { SignUpService } from "../services/auth.services";
 import { useAppStoreActions } from "@/store/hooks";
 import { AxiosError } from "axios";
 
-export function useRegister() {
+export function useSignUp() {
   const [state, setState] = useState<LoginState>({
     user: null,
     loading: false,
     error: null,
   });
 
+  // Mismo patrón que useLogin: persistimos en el store global para
+  // que la sesión sobreviva navegación y recarga de página
   const setAuth = useAppStoreActions((actions) => actions.auth.setAuth);
 
-  const register = useCallback(async (payload: ICreateUserRequest) => {
+  const signup = useCallback(async (payload: ICreateUserRequest) => {
     setState({ user: null, loading: true, error: null });
     try {
       const response = await SignUpService(payload);
@@ -31,5 +33,5 @@ export function useRegister() {
     }
   }, [setAuth]);
 
-  return { ...state, register };
+  return { ...state, signup };
 }

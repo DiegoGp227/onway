@@ -17,7 +17,7 @@ export default function SelectAuthSystem({
             : "text-text-muted hover:text-text"
         }`}
       >
-        Sign in
+        Login
       </button>
       <button
         onClick={() => setIsLogin(false)}
@@ -27,7 +27,7 @@ export default function SelectAuthSystem({
             : "text-text-muted hover:text-text"
         }`}
       >
-        Register
+        Sign Up
       </button>
     </div>
   );

@@ -1,32 +1,88 @@
+import { useSignUp } from "@/src/auth/hooks/useSignUp";
+import { ICreateUserRequest } from "@/src/auth/types/auth.types";
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
+import { useForm } from "react-hook-form";
+
 export default function SignUpForm() {
+    const [showPassword, setShowPassword] = useState(false);
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+    } = useForm<ICreateUserRequest>();
+
+    const { user, error, loading, signup } = useSignUp();
+
+    const router = useRouter();
+
+    useEffect(() => {
+        if (user) router.push("/");
+    }, [user]);
     return (
-        <form action="" className="flex flex-col gap-4">
-            <div className="flex flex-col gap-2">
+        <form onSubmit={handleSubmit(signup)}
+            className="flex flex-col gap-4">
+<div className="flex flex-col gap-2">
                 <label htmlFor="signup-email" className="text-sm font-medium text-text-muted">Email</label>
-                <input 
+                <input
                     id="signup-email"
-                    type="email" 
-                    placeholder="you@example.com"
-                    className="w-full px-4 py-3 bg-bg border border-border rounded-lg text-text placeholder:text-text-dim focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/20 transition-all duration-200"
+                    type="email"
+                    placeholder="name@company.com"
+                    className="w-full px-4 py-3 bg-bg/80 border border-border rounded-xl text-text placeholder:text-text-dim focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/10 transition-all duration-200"
+                    {...register("email", { required: "Email is required" })}
                 />
             </div>
+            {errors.email && (
+                <p className="text-red-500 text-sm">{errors.email.message}</p>
+            )}
 
-            <div className="flex flex-col gap-2">
+<div className="flex flex-col gap-2">
                 <label htmlFor="signup-password" className="text-sm font-medium text-text-muted">Password</label>
-                <input 
-                    id="signup-password"
-                    type="password"
-                    placeholder="••••••••"
-                    className="w-full px-4 py-3 bg-bg border border-border rounded-lg text-text placeholder:text-text-dim focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/20 transition-all duration-200"
-                />
+                <div className="relative group">
+                    <div className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-text-dim group-focus-within:text-accent transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
+                        </svg>
+                    </div>
+                    <input
+                        id="signup-password"
+                        type={showPassword ? "text" : "password"}
+                        placeholder="Create a strong password"
+                        className="w-full pl-12 pr-12 py-3.5 bg-bg/80 border border-border rounded-xl text-text placeholder:text-text-dim focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/10 transition-all duration-200"
+                        {...register("password", { required: "Password is required", minLength: { value: 8, message: "Password must be at least 8 characters" } })}
+                    />
+                    <button 
+                        type="button" 
+                        className="absolute right-4 top-1/2 -translate-y-1/2 text-text-dim hover:text-text transition-colors"
+                        onClick={() => setShowPassword(!showPassword)}
+                    >
+                        {showPassword ? (
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M3.98 8.223A10.477 10.477 0 001.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.45 10.45 0 0112 4.5c4.756 0 8.773 3.162 10.065 7.498a10.523 10.523 0 01-4.293 5.774M6.228 6.228L3 3m3.228 3.228l3.65 3.65m7.894 7.894L21 21m-3.228-3.228l-3.65-3.65m0 0a3 3 0 10-4.243-4.243m4.242 4.242L9.88 9.88" />
+                            </svg>
+                        ) : (
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                        )}
+                    </button>
+                </div>
             </div>
+            {errors.password && (
+                <p className="text-red-500 text-sm">{errors.password.message}</p>
+            )}
 
-            <button 
+            {error && <p className="text-red-500 text-sm">{error}</p>}
+
+<button
                 type="submit"
-                className="w-full py-3 bg-accent hover:bg-accent-bright text-bg font-semibold rounded-lg transition-all duration-200 mt-2"
+                className="w-full py-3 bg-accent hover:bg-accent-bright text-bg font-semibold rounded-xl transition-all duration-200 mt-2"
+                disabled={loading}
             >
-                Create account
+                {loading ? "Creating account..." : "Create account"}
             </button>
+
 
             <p className="text-xs text-text-muted text-center">
                 By signing up, you agree to our Terms of Service and Privacy Policy
