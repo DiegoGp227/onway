@@ -1,10 +1,7 @@
 export default function Home() {
   return (
-    <div>
-      <div>
-        Hello World!
-      </div>
-      <div></div>
-    </div>
+    <main style={{ color: '#e4f4f0' }} className="text-xl font-medium">
+      Hello World!
+    </main>
   );
 }
