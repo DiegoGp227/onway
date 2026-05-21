@@ -6,6 +6,9 @@
   --border: #252840;
   --border-hover: #333650;
 
+  --bg-tab-active:#0c2936;
+  /* #094a4e */
+
   --accent: #00d4b0;
   --accent-dark: #0891b2;
   --accent-bright: #34d399;
@@ -34,6 +37,8 @@
   --color-surface: var(--surface);
   --color-border: var(--border);
   --color-border-hover: var(--border-hover);
+
+  --color-bg-tab-active: var(--bg-tab-active);
 
   --color-accent: var(--accent);
   --color-accent-dark: var(--accent-dark);
