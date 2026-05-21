@@ -54,7 +54,7 @@ export default function RootLayout({
         <SWRProvider>
           {/* <ConditionalHeader /> */}
           {/* <ConditionalContent> */}
-          <div className="relative z-10 flex-1 w-full flex flex-col py-6 px-8 min-h-0 gap-7">
+          <div className="relative z-10 flex-1 w-full flex flex-col min-h-0">
             {children}
           </div>
           {/* </ConditionalContent> */}
