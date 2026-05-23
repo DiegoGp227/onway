@@ -1,7 +1,7 @@
 export default function TasksList() {
     return (
-        <div className="px-2 flex flex-col gap-2">
-            <p>Earring</p>
+        <div className="px-2 flex flex-col gap-2 mt-2">
+            <p className="text-text-muted">Earring</p>
             <ul className="flex flex-col gap-2">
                 <li className="flex justify-between" onClick={() => { alert("Escribe bien Mono stupido") }}>
                     <div className="flex gap-2">
@@ -21,7 +21,7 @@ export default function TasksList() {
 
                     </div>
                     <div>
-                        <span className="py-1 px-2 bg-red-950 border border-red-700 text-red-500 rounded text-xs">Medium</span>
+                        <span className="py-1 px-2 bg-red-950 border border-red-700 text-[#ff7575] rounded text-xs">Medium</span>
                     </div>
                 </li>
                 <li className="flex justify-between" onClick={() => { alert("Escribe bien Mono stupido") }}>
@@ -42,10 +42,12 @@ export default function TasksList() {
 
                     </div>
                     <div>
-                        <span className="py-1 px-2 bg-red-950 border border-red-700 text-red-500 rounded text-xs">Medium</span>
+                        <span className="py-1 px-2 bg-red-950 border border-red-700 text-[#ff7575] rounded text-xs">Medium</span>
                     </div>
                 </li>
-                
+                <div>
+                    <button className="bg-[#0c2936] px-2 border-2 rounded-lg border-[#094a4e] text-accent cursor-pointer" onClick={() => { alert("New Tasks") }}>New Tasks</button>
+                </div>
             </ul>
         </div>
     )

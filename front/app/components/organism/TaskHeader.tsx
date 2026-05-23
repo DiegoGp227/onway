@@ -1,6 +1,6 @@
 export default function TaskHeader() {
     return (
-        <div className="flex justify-between items-center h-11 px-2">
+        <div className="flex justify-between items-center h-11 px-2 border-b-2 border-border">
             <div>
                 <p className="text-text-muted">Tasks</p>
             </div>
