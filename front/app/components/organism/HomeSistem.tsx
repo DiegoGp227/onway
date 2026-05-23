@@ -34,12 +34,13 @@ export default function HomeSistem() {
 
     return (
         <>
-            <div className="flex w-full border-t border-b border-border py-4">
-                <div>
-                    <SquareTerminal />
+            <div className="shrink-0 px-7 py-4 flex items-center gap-4 border-b border-border bg-linear-to-br from-accent/12 to-transparent relative overflow-hidden">
+                <div className="absolute w-70 h-70 rounded-full bg-accent/20 blur-[80px] -top-45 right-20 pointer-events-none" />
+                <div className="w-11 h-11 rounded-xl shrink-0 bg-accent/13 border border-accent/22 flex items-center justify-center shadow-[0_0_18px_rgba(0,212,176,0.14)] relative z-1">
+                    <SquareTerminal className="text-accent size-5" />
                 </div>
-                <div>
-                    <p>Develoment</p>
+                <div className="flex-1 min-w-0 relative z-1">
+                    <p className="text-xl font-bold tracking-[-.4px] text-text">Development</p>
                 </div>
             </div>
             <main className="flex flex-1 min-h-0 overflow-hidden">

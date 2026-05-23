@@ -3,8 +3,8 @@ import Image from "next/image";
 
 export default function Header() {
     return (
-        <header className="flex bg-surface w-full">
-            <div className="flex justify-center items-center gap-5">
+        <header className="flex bg-black/25 w-full">
+            <div className="flex justify-center items-center gap-5 px-5">
                 <div>
                     <Image
                         src="/main-logo.png"
