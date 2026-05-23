@@ -7,5 +7,5 @@ export default function TasksSitem() {
             <TaskHeader />
             <TasksList />
         </div>
-    )
+    );
 }

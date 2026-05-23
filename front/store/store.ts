@@ -1,10 +1,10 @@
 import { createStore, persist } from "easy-peasy";
 import authModel, { AuthModel } from "./authModel";
 export interface IAppStoreState {
-  auth: AuthModel;
+    auth: AuthModel;
 }
 const model: IAppStoreState = {
-  auth: persist(authModel, { storage: "localStorage" }),
+    auth: persist(authModel, { storage: "localStorage" }),
 };
 export const store = createStore(model);
 

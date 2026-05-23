@@ -11,5 +11,5 @@ export default function NotesSistem({ style }: NotesSistemProps) {
             <SelectNotesSistem />
             <NoteEditor />
         </div>
-    )
+    );
 }

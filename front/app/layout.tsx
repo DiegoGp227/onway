@@ -6,60 +6,60 @@ import { SWRProvider } from "@/provider/StoreProvider";
 // import ConditionalContent from "./components/molecules/ConditionalContent";
 
 const inter = Inter({
-  weight: ["300", "400", "500", "600", "700", "800"],
-  variable: "--font-inter",
-  subsets: ["latin"],
+    weight: ["300", "400", "500", "600", "700", "800"],
+    variable: "--font-inter",
+    subsets: ["latin"],
 });
 
 const dmSans = DM_Sans({
-  weight: ["300", "400", "500", "600", "700", "800"],
-  variable: "--font-dm-sans",
-  subsets: ["latin"],
+    weight: ["300", "400", "500", "600", "700", "800"],
+    variable: "--font-dm-sans",
+    subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: "OneWay",
-  description: "OneWay App",
-  icons: {
-    icon: "/onway_icon.png",
-  },
+    title: "OneWay",
+    description: "OneWay App",
+    icons: {
+        icon: "/onway_icon.png",
+    },
 };
 
 export default function RootLayout({
-  children,
+    children,
 }: Readonly<{
-  children: React.ReactNode;
+    children: React.ReactNode;
 }>) {
-  return (
-    <html lang="es">
-      <body
-        className={`${inter.variable} ${dmSans.variable} antialiased w-full h-screen overflow-hidden flex flex-col bg-bg text-text`}
-      >
-        {/* Background layer */}
-        <div className="app-bg" aria-hidden="true">
-          <div className="app-bg__mesh" />
-          <div className="app-bg__orb app-bg__orb--1" />
-          <div className="app-bg__orb app-bg__orb--2" />
-          <div className="app-bg__orb app-bg__orb--3" />
-          <div className="app-bg__spot app-bg__spot--1" />
-          <div className="app-bg__spot app-bg__spot--2" />
-          <div className="app-bg__spot app-bg__spot--3" />
-          <div className="app-bg__ring app-bg__ring--1" />
-          <div className="app-bg__ring app-bg__ring--2" />
-          <div className="app-bg__ring app-bg__ring--3" />
-          <div className="app-bg__ring app-bg__ring--4" />
-          <div className="app-bg__grain" />
-        </div>
+    return (
+        <html lang="es">
+            <body
+                className={`${inter.variable} ${dmSans.variable} antialiased w-full h-screen overflow-hidden flex flex-col bg-bg text-text`}
+            >
+                {/* Background layer */}
+                <div className="app-bg" aria-hidden="true">
+                    <div className="app-bg__mesh" />
+                    <div className="app-bg__orb app-bg__orb--1" />
+                    <div className="app-bg__orb app-bg__orb--2" />
+                    <div className="app-bg__orb app-bg__orb--3" />
+                    <div className="app-bg__spot app-bg__spot--1" />
+                    <div className="app-bg__spot app-bg__spot--2" />
+                    <div className="app-bg__spot app-bg__spot--3" />
+                    <div className="app-bg__ring app-bg__ring--1" />
+                    <div className="app-bg__ring app-bg__ring--2" />
+                    <div className="app-bg__ring app-bg__ring--3" />
+                    <div className="app-bg__ring app-bg__ring--4" />
+                    <div className="app-bg__grain" />
+                </div>
 
-        <SWRProvider>
-          {/* <ConditionalHeader /> */}
-          {/* <ConditionalContent> */}
-          <div className="relative z-10 flex-1 w-full flex flex-col min-h-0">
-            {children}
-          </div>
-          {/* </ConditionalContent> */}
-        </SWRProvider>
-      </body>
-    </html>
-  );
+                <SWRProvider>
+                    {/* <ConditionalHeader /> */}
+                    {/* <ConditionalContent> */}
+                    <div className="relative z-10 flex-1 w-full flex flex-col min-h-0">
+                        {children}
+                    </div>
+                    {/* </ConditionalContent> */}
+                </SWRProvider>
+            </body>
+        </html>
+    );
 }

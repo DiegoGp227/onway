@@ -49,5 +49,5 @@ export default function HomeSistem() {
                 <TasksSitem />
             </main>
         </>
-    )
+    );
 }

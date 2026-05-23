@@ -6,5 +6,5 @@ export default function AuthPage() {
             <div className="absolute inset-0 bg-linear-to-b from-accent/5 via-transparent to-transparent pointer-events-none" />
             <AuthSistem />
         </div>
-    )
+    );
 }
