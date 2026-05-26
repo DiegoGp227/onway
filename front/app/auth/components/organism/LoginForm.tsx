@@ -139,6 +139,7 @@ export default function LoginForm() {
             <button
                 type="submit"
                 className="w-full py-3 bg-accent hover:bg-accent-bright text-bg font-semibold rounded-xl transition-all duration-200 mt-2"
+                disabled={loading}
             >
                 Sign in
             </button>
