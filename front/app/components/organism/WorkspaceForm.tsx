@@ -1,5 +1,6 @@
 "use client";
 
+import { useCreateWorkspace } from "@/src/home/hooks/useCreateWorkspace";
 import { useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 
@@ -9,7 +10,11 @@ interface WorkspaceDto {
     icon: string;
 }
 
-export default function WorkspaceForm() {
+interface Props {
+    onSuccess?: () => void;
+}
+
+export default function WorkspaceForm({ onSuccess }: Props) {
     const colorInputRef = useRef<HTMLInputElement>(null);
     const [color, setColor] = useState("#00d4b0");
     const {
@@ -18,8 +23,11 @@ export default function WorkspaceForm() {
         formState: { errors },
     } = useForm<WorkspaceDto>();
 
-    const onSubmit = (data: WorkspaceDto) => {
-        console.log({ ...data, color });
+    const { create, error, loading } = useCreateWorkspace();
+
+    const onSubmit = async (data: WorkspaceDto) => {
+        const success = await create({ name: data.title, color, icon: data.icon });
+        if (success) onSuccess?.();
     };
 
     return (
@@ -69,11 +77,14 @@ export default function WorkspaceForm() {
                 />
             </div>
 
+            {error && <p className="text-red-500 text-sm text-center">{error}</p>}
+
             <button
                 type="submit"
-                className="w-full py-3 bg-accent hover:bg-accent-bright text-bg font-semibold rounded-xl transition-all duration-200 mt-1"
+                disabled={loading}
+                className="w-full py-3 bg-accent hover:bg-accent-bright disabled:opacity-50 disabled:cursor-not-allowed text-bg font-semibold rounded-xl transition-all duration-200 mt-1"
             >
-                Create workspace
+                {loading ? "Creating..." : "Create workspace"}
             </button>
         </form>
     );
