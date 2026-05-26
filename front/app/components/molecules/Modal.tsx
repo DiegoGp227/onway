@@ -7,18 +7,15 @@ interface IModalProps {
 
 export default function Modal({ children, onClose }: IModalProps) {
     return (
-        <div
-            className={`fixed inset-0 flex items-center justify-center bg-[rgba(20,20,20,0.7)] backdrop-blur-sm z-40`}
-        >
-            <div className="relative flex flex-col p-4 max-w-[85vw] max-h-[85vh] overflow-auto rounded bg-white">
-                <div className={`flex justify-end h-15 `}>
-                    <button onClick={onClose}>
-                        <X
-                            className={`text-main-black text-2xl border border-main-black rounded`}
-                        />
-                    </button>
-                </div>
-                {children}
+        <div className="fixed inset-0 flex items-center justify-center bg-bg/70 backdrop-blur-sm z-40">
+            <div className="relative flex flex-col w-full max-w-lg border-2 border-[#094a4e] rounded-xl bg-[#0c2936] shadow-2xl shadow-accent/10">
+                <button
+                    onClick={onClose}
+                    className="absolute top-3 right-3 size-8 flex items-center justify-center rounded-lg text-text-muted hover:text-accent hover:bg-accent/10 transition-all duration-200"
+                >
+                    <X className="size-5" />
+                </button>
+                <div className="p-5">{children}</div>
             </div>
         </div>
     );

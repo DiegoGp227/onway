@@ -4,6 +4,7 @@ import { SquarePlus } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
 import Modal from "../molecules/Modal";
+import WorkspaceForm from "./WorkspaceForm";
 
 export default function Header() {
     const [newWorkSpace, setNewWorkSpace] = useState<boolean>(false);
@@ -43,7 +44,7 @@ export default function Header() {
 
             {newWorkSpace && (
                 <Modal onClose={() => setNewWorkSpace(false)}>
-                    <div>Hekki</div>
+                    <WorkspaceForm />
                 </Modal>
             )}
         </>
