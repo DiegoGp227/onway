@@ -9,6 +9,13 @@ import {
   remove,
   update,
 } from "../modules/workspace/workspace.controllers.js";
+import {
+  create as createTopic,
+  getById as getTopicById,
+  list as listTopics,
+  remove as removeTopic,
+  update as updateTopic,
+} from "../modules/topic/topic.controllers.js";
 
 export const router: Router = Router();
 
@@ -25,3 +32,10 @@ router.get("/workspaces/:id", authMiddleware, getById);
 router.post("/workspaces", authMiddleware, create);
 router.put("/workspaces/:id", authMiddleware, update);
 router.delete("/workspaces/:id", authMiddleware, remove);
+
+// Topic Routes
+router.get("/workspaces/:workspaceId/topics", authMiddleware, listTopics);
+router.get("/workspaces/:workspaceId/topics/:id", authMiddleware, getTopicById);
+router.post("/workspaces/:workspaceId/topics", authMiddleware, createTopic);
+router.put("/workspaces/:workspaceId/topics/:id", authMiddleware, updateTopic);
+router.delete("/workspaces/:workspaceId/topics/:id", authMiddleware, removeTopic);
