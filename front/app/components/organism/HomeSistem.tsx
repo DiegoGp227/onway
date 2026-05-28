@@ -5,9 +5,11 @@ import { useState, useCallback } from "react";
 import NotesSistem from "./NotesSistem";
 import TasksSitem from "./TasksSitem";
 import Resizer from "../molecules/Resizer";
+import { useWorkspaceStore } from "@/store/workspaceStore";
 
 export default function HomeSistem() {
     const [notesWidth, setNotesWidth] = useState(52);
+    const { workspaceName } = useWorkspaceStore();
 
     const handlePointerDown = useCallback((e: React.PointerEvent) => {
         e.preventDefault();
@@ -40,7 +42,7 @@ export default function HomeSistem() {
                     <SquareTerminal className="text-accent size-5" />
                 </div>
                 <div className="flex-1 min-w-0 relative z-1">
-                    <p className="text-xl font-bold tracking-[-.4px] text-text">Development</p>
+                    <p className="text-xl font-bold tracking-[-.4px] text-text">{workspaceName}</p>
                 </div>
             </div>
             <main className="flex flex-1 min-h-0 overflow-hidden">
