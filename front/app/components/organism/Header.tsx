@@ -10,7 +10,7 @@ import { useWorkspaceStore } from "@/store/workspaceStore";
 
 export default function Header() {
     const [newWorkSpace, setNewWorkSpace] = useState<boolean>(false);
-    const { workspaces, loading } = useGetWorkspaces();
+    const { workspaces, loading, error, refetch } = useGetWorkspaces();
     const { workspaceId, setWorkspaceId, setWorkspaceName } = useWorkspaceStore();
 
     useEffect(() => {
@@ -45,6 +45,8 @@ export default function Header() {
                                     />
                                 ))}
                             </div>
+                        ) : error ? (
+                            <span className="text-red-400 text-sm">{error}</span>
                         ) : (
                             workspaces.map((workspace) => (
                                 <button
@@ -72,7 +74,7 @@ export default function Header() {
 
             {newWorkSpace && (
                 <Modal onClose={() => setNewWorkSpace(false)}>
-                    <WorkspaceForm onSuccess={() => setNewWorkSpace(false)} />
+                    <WorkspaceForm onSuccess={() => { setNewWorkSpace(false); refetch(); }} />
                 </Modal>
             )}
         </>
