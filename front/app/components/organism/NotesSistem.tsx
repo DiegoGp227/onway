@@ -10,7 +10,7 @@ export default function NotesSistem({ style }: NotesSistemProps) {
     const [topicActive, setTopicActive] = useState<string>("")
     return (
         <div className="flex flex-col overflow-hidden border-r border-white/5" style={style}>
-            <SelectNotesSistem setTopicActive={setTopicActive} />
+            <SelectNotesSistem topicActive={topicActive} setTopicActive={setTopicActive} />
             <NoteEditor topicActive={topicActive} />
         </div>
     );

@@ -1,4 +1,4 @@
-export interface Topics {
+export interface Topic {
   id: string;
   title: string;
   content: Record<string, unknown>;
@@ -10,5 +10,5 @@ export interface Topics {
 
 export interface TopicResponse {
     message: string;
-    topics: Topics[];
+    topics: Topic[];
 }
