@@ -1,40 +1,17 @@
-import { useState, useEffect, useCallback } from "react";
-import { AxiosError } from "axios";
-import { Workspace, WorkspacesResponse } from "../types/home.types";
-import { getWorkspaces } from "../services/home.services";
-
-interface GetWorkspacesState {
-    workspaces: Workspace[];
-    loading: boolean;
-    error: string | null;
-}
+import useSWR from "swr";
+import { Workspace } from "../types/workspaces.types";
+import { getWorkspaces } from "../services/workspaces.services";
 
 export function useGetWorkspaces() {
-    const [state, setState] = useState<GetWorkspacesState>({
-        workspaces: [],
-        loading: true,
-        error: null,
-    });
+    const { data, isLoading, error, mutate } = useSWR(
+        "workspaces", // key → SWR cachea con este nombre
+        getWorkspaces, // fetcher → el service que hace el GET
+    );
 
-    const fetch = useCallback(async () => {
-        setState((prev) => ({ ...prev, loading: true, error: null }));
-        try {
-            const response = await getWorkspaces();
-
-            setState({ workspaces: response.workspaces, loading: false, error: null });
-        } catch (err) {
-            const axiosError = err as AxiosError<{ message: string }>;
-            setState({
-                workspaces: [],
-                loading: false,
-                error: axiosError.response?.data?.message ?? "UNKNOWN_ERROR",
-            });
-        }
-    }, []);
-
-    useEffect(() => {
-        fetch();
-    }, [fetch]);
-
-    return { ...state, refetch: fetch };
+    return {
+        workspaces: data?.workspaces ?? ([] as Workspace[]),
+        loading: isLoading,
+        error: error?.message ?? null,
+        refetch: () => mutate(),
+    };
 }
