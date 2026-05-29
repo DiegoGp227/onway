@@ -1,5 +1,5 @@
 import { fetcher, postFetcher } from "@/utils/utils";
-import { WorkspaceData, WorkspacesResponse } from "../types/home.types";
+import { WorkspaceData, WorkspacesResponse } from "../types/workspaces.types";
 import { WorkspacesURL } from "@/src/shared/constants/urls";
 
 export function createWorkspace(

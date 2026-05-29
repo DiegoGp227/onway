@@ -1,7 +1,7 @@
 import { useState, useCallback } from "react";
 import { AxiosError } from "axios";
-import { WorkspaceData, CreateWorkspaceState } from "../types/home.types";
-import { createWorkspace } from "../services/home.services";
+import { WorkspaceData, CreateWorkspaceState } from "../types/workspaces.types";
+import { createWorkspace } from "../services/workspaces.services";
 
 export function useCreateWorkspace() {
     const [state, setState] = useState<CreateWorkspaceState>({

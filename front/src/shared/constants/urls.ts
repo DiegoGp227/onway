@@ -5,5 +5,9 @@ export const LoginURL = new URL("login", BaseURL);
 export const SignUpURL = new URL("signup", BaseURL);
 
 //Workspaces
-
 export const WorkspacesURL = new URL("workspaces", BaseURL);
+
+//Topics
+export const TopicsURL = (workspaceId: string) => {
+    return new URL(`workspaces/${workspaceId}/topics`, BaseURL);
+};
