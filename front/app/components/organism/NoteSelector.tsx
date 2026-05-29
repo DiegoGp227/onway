@@ -1,4 +1,14 @@
-export default function SelectNotesSistem() {
+import { useWorkspaceStore } from "@/store/workspaceStore";
+
+interface SelectNotesSistemProps {
+    setTopicActive: React.Dispatch<React.SetStateAction<string>>;
+}
+
+export default function SelectNotesSistem({ setTopicActive }: SelectNotesSistemProps) {
+    const { workspaceId } = useWorkspaceStore();
+
+
+    // usar el state de zustand para hacer un push al back con el workpace para obtener los topicos y ponerlos aqui para que seleccionen id para el editor 
     return (
         <>
             <div className="flex gap-4 py-2 px-5 bg-black/25">

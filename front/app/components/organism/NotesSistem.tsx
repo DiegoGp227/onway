@@ -1,3 +1,4 @@
+import { useState } from "react";
 import NoteEditor from "./NoteEditor";
 import SelectNotesSistem from "./NoteSelector";
 
@@ -6,10 +7,11 @@ interface NotesSistemProps {
 }
 
 export default function NotesSistem({ style }: NotesSistemProps) {
+    const [topicActive, setTopicActive] = useState<string>("")
     return (
         <div className="flex flex-col overflow-hidden border-r border-white/5" style={style}>
-            <SelectNotesSistem />
-            <NoteEditor />
+            <SelectNotesSistem setTopicActive={setTopicActive} />
+            <NoteEditor topicActive={topicActive} />
         </div>
     );
 }

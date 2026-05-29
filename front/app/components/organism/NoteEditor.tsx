@@ -1,3 +1,8 @@
-export default function NoteEditor() {
-    return <div></div>;
+interface NoteEditorProps {
+    topicActive: any
+}
+
+export default function NoteEditor({ topicActive }: NoteEditorProps) {
+
+    return <div>{topicActive}</div>;
 }
