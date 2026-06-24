@@ -1,6 +1,6 @@
 import { useState, useCallback } from "react";
 import { AxiosError } from "axios";
-import { WorkspaceData, CreateWorkspaceState } from "../types/workspaces.types";
+import { CreateWorkspaceInput, CreateWorkspaceState } from "../types/workspaces.types";
 import { createWorkspace } from "../services/workspaces.services";
 
 export function useCreateWorkspace() {
@@ -11,7 +11,7 @@ export function useCreateWorkspace() {
     });
 
     const create = useCallback(
-        async (data: Pick<WorkspaceData, 'name'> & Partial<Pick<WorkspaceData, 'color' | 'icon'>>): Promise<boolean> => {
+        async (data: Pick<CreateWorkspaceInput, 'name'> & Partial<Pick<CreateWorkspaceInput, 'color' | 'icon'>>): Promise<boolean> => {
             setState({ workspace: null, loading: true, error: null });
             try {
                 const response = await createWorkspace(data);

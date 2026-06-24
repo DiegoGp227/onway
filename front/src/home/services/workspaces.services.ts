@@ -1,11 +1,11 @@
 import { fetcher, postFetcher } from "@/utils/utils";
-import { WorkspaceData, WorkspacesResponse } from "../types/workspaces.types";
+import { CreateWorkspaceInput, WorkspacesResponse } from "../types/workspaces.types";
 import { WorkspacesURL } from "@/src/shared/constants/urls";
 
 export function createWorkspace(
-    data: Pick<WorkspaceData, "name"> & Partial<Pick<WorkspaceData, "color" | "icon">>,
-): Promise<{ workspace: WorkspaceData }> {
-    return postFetcher<{ workspace: WorkspaceData }>(WorkspacesURL.toString(), data);
+    data: Pick<CreateWorkspaceInput, "name"> & Partial<Pick<CreateWorkspaceInput, "color" | "icon">>,
+): Promise<{ workspace: CreateWorkspaceInput }> {
+    return postFetcher<{ workspace: CreateWorkspaceInput }>(WorkspacesURL.toString(), data);
 }
 
 export function getWorkspaces(): Promise<WorkspacesResponse> {

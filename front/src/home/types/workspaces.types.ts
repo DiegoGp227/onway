@@ -1,11 +1,11 @@
-export interface WorkspaceData {
+export interface CreateWorkspaceInput {
     name: string;
     color?: string;
     icon?: string;
 }
 
 export interface CreateWorkspaceState {
-    workspace: WorkspaceData | null;
+    workspace: CreateWorkspaceInput | null;
     loading: boolean;
     error: string | null;
 }
