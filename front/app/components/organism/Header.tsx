@@ -35,7 +35,7 @@ export default function Header() {
                             className="drop-shadow-lg shadow-accent/20"
                         />
                     </div>
-                    <div className="flex gap-10">
+                    <div className="flex gap-3">
                         {loading ? (
                             <div className="flex gap-2">
                                 {[1, 2, 3].map((i) => (
