@@ -42,8 +42,7 @@ model Workspace {
 model Task {
   id String @id @default(cuid())
 
-  title       String
-  description String?
+  title     String
 
   completed Boolean @default(false)
 
