@@ -10,6 +10,7 @@ import {
   update,
 } from "../modules/workspace/workspace.controllers.js";
 import {
+  count as countTasks,
   create as createTask,
   getById as getTaskById,
   list as listTasks,
@@ -48,6 +49,7 @@ router.put("/workspaces/:workspaceId/topics/:id", authMiddleware, updateTopic);
 router.delete("/workspaces/:workspaceId/topics/:id", authMiddleware, removeTopic);
 
 // Task Routes
+router.get("/workspaces/:workspaceId/tasks/count", authMiddleware, countTasks);
 router.get("/workspaces/:workspaceId/tasks", authMiddleware, listTasks);
 router.get("/workspaces/:workspaceId/tasks/:id", authMiddleware, getTaskById);
 router.post("/workspaces/:workspaceId/tasks", authMiddleware, createTask);

@@ -5,6 +5,7 @@ import {
   createTask,
   deleteTask,
   getTaskById,
+  getTaskCount,
   getTasks,
   updateTask,
 } from "./task.services.js";
@@ -82,6 +83,15 @@ export const update = asyncHandler(async (req: Request, res: Response) => {
   res.status(200).json({
     message: "Task updated successfully",
     task,
+  });
+});
+
+export const count = asyncHandler(async (req: Request, res: Response) => {
+  const taskCount = await getTaskCount(String(req.params.workspaceId), req.user!.id);
+
+  res.status(200).json({
+    message: "Tasks count retrieved successfully",
+    ...taskCount,
   });
 });
 

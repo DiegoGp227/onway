@@ -85,6 +85,20 @@ export const updateTask = async (
   });
 };
 
+export const getTaskCount = async (
+  workspaceId: string,
+  userId: string,
+): Promise<{ total: number; completed: number; pending: number }> => {
+  await verifyWorkspaceOwnership(workspaceId, userId);
+
+  const [total, completed] = await Promise.all([
+    prisma.task.count({ where: { workspaceId } }),
+    prisma.task.count({ where: { workspaceId, completed: true } }),
+  ]);
+
+  return { total, completed, pending: total - completed };
+};
+
 export const deleteTask = async (
   id: string,
   workspaceId: string,
