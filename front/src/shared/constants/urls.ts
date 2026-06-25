@@ -11,3 +11,12 @@ export const WorkspacesURL = new URL("workspaces", BaseURL);
 export const TopicsURL = (workspaceId: string) => {
     return new URL(`workspaces/${workspaceId}/topics`, BaseURL);
 };
+
+//Tasks
+export const TasksURL = (workspaceId: string) => {
+    return new URL(`workspaces/${workspaceId}/tasks`, BaseURL);
+};
+
+export const TaskCountURL = (workspaceId: string) => {
+    return new URL(`workspaces/${workspaceId}/tasks/count`, BaseURL);
+};
